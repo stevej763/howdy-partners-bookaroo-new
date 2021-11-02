@@ -8,6 +8,6 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "user_username", with: "feature_test_user"
     fill_in "user_password", with: "feature_test_password"
     click_button "Create User"
-    expect(page).to have_current_path("/welcome")
+    expect(page).to have_current_path("/posts")
   end
 end
