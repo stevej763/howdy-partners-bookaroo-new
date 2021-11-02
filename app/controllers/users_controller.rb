@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    puts "New user endpoint, creating new user instance"
     @user = User.new
   end
 
