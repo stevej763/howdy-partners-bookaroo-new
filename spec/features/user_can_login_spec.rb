@@ -10,7 +10,7 @@ RSpec.feature "Log in", type: :feature do
     fill_in "username", with: @test_user
     fill_in "password", with: @test_password
     click_button "Log in"
-    expect(page).to have_current_path("/posts")
+    expect(page).to have_current_path("/newsfeed")
   end
 
   scenario "User gets the password wrong" do
