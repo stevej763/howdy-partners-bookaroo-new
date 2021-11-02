@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # puts params
     @user = User.create(params.require(:user).permit(:username,        
       :password))
       session[:user_id] = @user.id
