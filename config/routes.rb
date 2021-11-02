@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get 'sign-up', to: 'users#new'
   post 'sign-up', to: 'users#create'
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  get 'log-in', to: 'sessions#new'
+  post 'log-in', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
   root "sessions#welcome"
 end

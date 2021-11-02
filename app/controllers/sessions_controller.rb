@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to '/welcome'
+      redirect_to '/posts'
     else
-      redirect_to '/login'
+      redirect_to '/log-in'
     end
   end
 

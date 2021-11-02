@@ -13,3 +13,14 @@ require 'rails_helper'
 # RSpec.describe UsersHelper, type: :helper do
 #   pending "add some examples to (or delete) #{__FILE__}"
 # end
+
+def sign_up_test_user
+  @test_user = "feature_test_user"
+  @test_password = "feature_test_user"
+  visit "/"
+  click_button "Sign Up"
+  expect(page).to have_current_path("/sign-up")
+  fill_in "user_username", with: @test_user
+  fill_in "user_password", with: @test_password
+  click_button "Create User"
+end

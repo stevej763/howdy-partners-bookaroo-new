@@ -3,6 +3,6 @@
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.username %></h1>
 <% else %>
-  <%= button_to "Login", '/login', method: :get%>
+  <%= button_to "Log in", '/log-in', method: :get%>
   <%= button_to "Sign Up", '/sign-up', method: :get%>
 <%end%>
