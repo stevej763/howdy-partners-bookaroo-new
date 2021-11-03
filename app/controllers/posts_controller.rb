@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def newsfeed
-    puts current_user
     @username = current_user.username
     @posts = Post.all
   end
