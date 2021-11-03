@@ -1,5 +1,5 @@
 
-<h3><%=@username%></h3>
+<h3><%= current_user.username %></h3>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>

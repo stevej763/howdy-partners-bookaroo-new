@@ -5,12 +5,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to newsfeed_url
   end
 
   def newsfeed
-    puts current_user
-    @username = current_user.username
     @posts = Post.all
   end
 
