@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "Log in", type: :feature do
+  fixtures :users
   scenario "Users can log into their account" do
-    sign_up_test_user
-    Capybara.reset_session!
     log_in_user
     expect(page).to have_current_path("/newsfeed")
   end
@@ -17,6 +16,5 @@ RSpec.feature "Log in", type: :feature do
     click_button "Log in"
     expect(page).to have_current_path("/log-in")
   end
-
 
 end

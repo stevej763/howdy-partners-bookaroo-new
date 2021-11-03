@@ -5,12 +5,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to newsfeed_url
   end
 
   def newsfeed
-    @username = current_user.username
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   private

@@ -27,9 +27,9 @@ end
 
 def log_in_user
   visit('/')
-    click_button 'Log in'
-    expect(page).to have_current_path("/log-in")
-    fill_in "username", with: @test_user
-    fill_in "password", with: @test_password
-    click_button "Log in"
+  click_button 'Log in'
+  expect(page).to have_current_path("/log-in")
+  fill_in "username", with: "user1"
+  fill_in "password", with: "password1"
+  click_button "Log in"
 end
