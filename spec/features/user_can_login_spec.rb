@@ -18,5 +18,4 @@ RSpec.feature "Log in", type: :feature do
     expect(page).to have_current_path("/log-in")
   end
 
-
 end

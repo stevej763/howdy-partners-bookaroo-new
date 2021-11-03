@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
 
-    if @user && @user.authenticate(params[:password])
+    if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       
       redirect_to '/newsfeed'
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-    if session[:user_id]
+    if logged_in?
       redirect_to '/newsfeed'
     end
   end

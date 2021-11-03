@@ -1,6 +1,6 @@
 require 'simplecov'
 require 'simplecov-console'
-require 'helpers/users_helper_spec.rb'
+require 'helpers/users_helper_spec'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -8,7 +8,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
