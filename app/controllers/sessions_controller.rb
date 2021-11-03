@@ -26,5 +26,8 @@ class SessionsController < ApplicationController
   end
 
   def welcome
+    if session[:user_id]
+      redirect_to '/newsfeed'
+    end
   end
 end
