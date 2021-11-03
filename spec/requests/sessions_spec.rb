@@ -9,7 +9,7 @@ RSpec.describe "Sessions", type: :request do
   end
 
   describe "GET /log-out" do
-    it "returns http success" do
+    it "returns http redirect" do
       get "/log-out"
       expect(response).to have_http_status(:redirect)
     end
