@@ -20,6 +20,11 @@ class SessionsController < ApplicationController
   def login
   end
 
+  def log_out
+    session[:user_id] = nil
+    redirect_to '/'
+  end
+
   def welcome
   end
 end
