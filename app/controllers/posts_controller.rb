@@ -8,7 +8,9 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def index
+  def newsfeed
+    puts current_user
+    @username = current_user.username
     @posts = Post.all
   end
 
