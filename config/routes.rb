@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'log-in', to: 'sessions#new'
   post 'log-in', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
+
+  get 'log-out', to: 'sessions#log_out'
   
   resources :posts
   get 'newsfeed', to: 'posts#newsfeed'

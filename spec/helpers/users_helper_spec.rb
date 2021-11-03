@@ -18,9 +18,18 @@ def sign_up_test_user
   @test_user = "feature_test_user"
   @test_password = "feature_test_user"
   visit "/"
-  click_button "Sign Up"
+  click_button "Sign up"
   expect(page).to have_current_path("/sign-up")
   fill_in "user_username", with: @test_user
   fill_in "user_password", with: @test_password
   click_button "Create User"
+end
+
+def log_in_user
+  visit('/')
+    click_button 'Log in'
+    expect(page).to have_current_path("/log-in")
+    fill_in "username", with: @test_user
+    fill_in "password", with: @test_password
+    click_button "Log in"
 end

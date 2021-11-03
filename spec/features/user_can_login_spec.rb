@@ -4,12 +4,7 @@ RSpec.feature "Log in", type: :feature do
   scenario "Users can log into their account" do
     sign_up_test_user
     Capybara.reset_session!
-    visit('/')
-    click_button 'Log in'
-    expect(page).to have_current_path("/log-in")
-    fill_in "username", with: @test_user
-    fill_in "password", with: @test_password
-    click_button "Log in"
+    log_in_user
     expect(page).to have_current_path("/newsfeed")
   end
 
