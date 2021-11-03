@@ -22,7 +22,7 @@ def sign_up_test_user
   expect(page).to have_current_path("/sign-up")
   fill_in "user_username", with: @test_user
   fill_in "user_password", with: @test_password
-  click_button "Create User"
+  click_button "Sign up"
 end
 
 def log_in_user
