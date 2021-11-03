@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Newsfeed", type: :feature do
   scenario "Can submit posts and view them" do
     sign_up_test_user
     visit "/newsfeed"
