@@ -4,6 +4,7 @@ RSpec.feature "Navigation Bar", type: :feature do
     Capybara.reset_session!
     log_in_user
     visit('/newsfeed')
-    expect(page).to have_content 'Navigation Bar'
+    expect(page).to have_content 'BOOKAROO'
+    expect(page).to have_button 'Log out'
   end
 end
