@@ -1,3 +1,9 @@
+
+<div class="navigation-bar">
+  <%= button_to "Log in", '/log-in', class: "button-type-2", method: :get%>
+</div>
+
+
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 <h1>Sign Up</h1>
@@ -6,5 +12,5 @@
   <%= f.text_field :username%><br>
   <%= f.label :password%><br>
   <%= f.password_field :password%><br>
-  <%= f.submit %>
+  <%= f.submit 'Sign up'%>
 <%end%>
