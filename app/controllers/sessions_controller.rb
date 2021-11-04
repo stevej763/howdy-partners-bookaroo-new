@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    puts User.create(username: params[:username]).valid?
     @user = User.find_by(username: params[:username])
 
     if @user&.authenticate(params[:password])

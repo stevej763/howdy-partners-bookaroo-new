@@ -4,13 +4,19 @@
 </div>
 
 
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-<h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :username%><br>
-  <%= f.text_field :username%><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
-  <%= f.submit 'Sign up'%>
-<%end%>
+<div class="credentials-container">
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f|%>
+  <div class="form-section" id="form-username">
+    <%= f.label :username%>
+    <p class="error-message"><%= @user.errors[:username].first %></p>
+    <%= f.text_field :username%>
+  </div>
+  <div class="form-section" id="form-password"> 
+    <%= f.label :password%>
+    <p class="error-message"><%= @user.errors[:password].first %></p>
+    <%= f.password_field :password%>
+    <%= f.submit 'Sign up'%>
+  </div>
+  <%end%>
+</div>
