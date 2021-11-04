@@ -16,4 +16,10 @@ feature "Viewing posts" do
     expect(find_by_id(4)).to have_content("This is post 1")
     expect(find_by_id(4)).to have_content("12:01 - 01 Jan 2021")
   end
+
+  scenario "Can view the name of the author of the post" do
+    sign_up_test_user
+    visit "/newsfeed"
+    expect(find_by_id(0)).to have_content("user1")
+  end
 end
