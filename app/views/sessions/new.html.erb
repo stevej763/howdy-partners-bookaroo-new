@@ -5,6 +5,9 @@
 <div class="credentials-container">
   <h1>Log in</h1>
     <%= form_tag '/log-in' do %>
+    <% if @error %>
+    <%= @error %>
+    <% end %>
     <div class="form-section">
       <%= label_tag :username%>
       <%= text_field_tag :username %>

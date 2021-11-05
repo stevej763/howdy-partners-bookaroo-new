@@ -6,15 +6,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts User.create(username: params[:username]).valid?
     @user = User.find_by(username: params[:username])
-
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       
       redirect_to '/newsfeed'
     else
-      redirect_to '/log-in'
+      @error = "Invalid credentials"
+      render "new"
     end
   end
 
