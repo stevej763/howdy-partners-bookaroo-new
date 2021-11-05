@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:username, :password)) 
+    @user = User.create(params.require(:user).permit(:username, :password, :profile_picture))
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
@@ -15,6 +15,5 @@ class UsersController < ApplicationController
     else
       render "new"
     end
-   
   end
 end

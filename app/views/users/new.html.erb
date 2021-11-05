@@ -3,7 +3,6 @@
   <%= button_to "Log in", '/log-in', class: "button-type-2", method: :get%>
 </div>
 
-
 <div class="credentials-container">
   <h1>Sign up</h1>
   <%= form_for @user do |f|%>
@@ -21,6 +20,12 @@
     <% end %>
     <%= f.password_field :password%>
   </div>
+  <div class="form-section" id="form-profile-picture">
+    <%= f.label :profile_picture%><br>
+    <%= f.text_area :profile_picture%><br>
+  </div> 
+  
   <%= f.submit 'Sign up', class: "button-type-3"%>
   <%end%>
 </div>
+
