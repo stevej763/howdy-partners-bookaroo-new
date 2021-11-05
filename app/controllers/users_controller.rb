@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params.require(:user).permit(:username,        
-      :password))
+      :password, :profile_picture))
     session[:user_id] = @user.id
     redirect_to '/newsfeed'
   end
