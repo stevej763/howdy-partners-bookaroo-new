@@ -6,16 +6,16 @@
   <h1>Log in</h1>
     <%= form_tag '/log-in' do %>
     <% if @error %>
-    <%= @error %>
+    <div class="error-message"><%= @error %></div>
     <% end %>
     <div class="form-section">
-      <%= label_tag :username%>
+      <div><%= label_tag :username%></div>
       <%= text_field_tag :username %>
     </div>
     <div class="form-section">
-      <%= label_tag :password%>
+      <div><%= label_tag :password%></div>
       <%= password_field_tag :password%>
     </div>
-    <%= submit_tag "Log in"%>
+    <%= submit_tag "Log in", class: "button-type-3" %>
   <%end%>
 </div>

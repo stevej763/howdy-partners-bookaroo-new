@@ -21,9 +21,14 @@ body {
 }
 
 .error-message {
-  margin: 2px 0;
-  color: red;
+  margin: 2px auto;
   text-transform: capitalize;
+  width: 90%;
+  background-color: red;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5px; 
+  text-align: center;
 }
 
 .credentials-container {
@@ -105,6 +110,26 @@ body {
 }
 
 .button-type-2:hover {
+  background-color: #9b9e9c;
+  color: white;
+}
+
+.button-type-3 {
+  background-color: #e7e7e7; /* Gray */
+  border: none;
+  border-radius: 4px;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button-type-3:hover {
   background-color: #9b9e9c;
   color: white;
 }

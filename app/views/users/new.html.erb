@@ -8,15 +8,19 @@
   <h1>Sign up</h1>
   <%= form_for @user do |f|%>
   <div class="form-section" id="form-username">
-    <%= f.label :username%>
-    <p class="error-message"><%= @user.errors[:username].first %></p>
+    <div><%= f.label :username%></div>
+    <% if !@user.errors.empty? %>
+    <div class="error-message"><%= @user.errors[:username].first %></div>
+    <% end %>
     <%= f.text_field :username%>
   </div>
   <div class="form-section" id="form-password"> 
-    <%= f.label :password%>
+   <div> <%= f.label :password%></div>
+    <% if !@user.errors.empty? %>
     <p class="error-message"><%= @user.errors[:password].first %></p>
+    <% end %>
     <%= f.password_field :password%>
   </div>
-  <%= f.submit 'Sign up'%>
+  <%= f.submit 'Sign up', class: "button-type-3"%>
   <%end%>
 </div>
