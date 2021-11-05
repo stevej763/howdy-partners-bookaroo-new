@@ -14,7 +14,47 @@
  *= require_self
  */
 
- .button {
+body {
+  padding: 20px;
+  height: 100%;
+  margin: auto;
+}
+
+.error-message {
+  margin: 2px auto;
+  text-transform: capitalize;
+  width: 90%;
+  background-color: red;
+  padding: 2px;
+  border: 2px solid black;
+  border-radius: 5px; 
+  text-align: center;
+}
+
+.credentials-container {
+  margin: auto;
+  padding: 40px;
+  border-radius: 5px;
+  border: 2px solid brown;
+  box-shadow: 0px 10px 20px black;
+  width: 300px;
+  background-color: rosybrown;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .credentials-container {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.button {
   background-color: #cbeff5; /* Blue */
   border: none;
   border-radius: 4px;
@@ -34,7 +74,7 @@
   color: white;
 }
 
-.button-type-1{
+.button-type-1 {
   background-color: #cbeff5; /* Blue */
   border: none;
   border-radius: 64px;
@@ -54,8 +94,7 @@
   color: white;
 }
 
-
-.button-type-2{
+.button-type-2 {
   background-color: #e7e7e7; /* Gray */
   border: none;
   border-radius: 4px;
@@ -75,12 +114,32 @@
   color: white;
 }
 
+.button-type-3 {
+  background-color: #e7e7e7; /* Gray */
+  border: none;
+  border-radius: 4px;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button-type-3:hover {
+  background-color: #9b9e9c;
+  color: white;
+}
+
 .header {
-    background-color: goldenrod;
-    border-bottom: 5px solid indianred;
-    margin: -10px;
-    margin-bottom: 10px;
-    padding: 10px 10px;
+  background-color: goldenrod;
+  border-bottom: 5px solid indianred;
+  margin: -10px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
 }
 
 .navigation-bar {

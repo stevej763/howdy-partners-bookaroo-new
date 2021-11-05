@@ -6,6 +6,15 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_current_path("/newsfeed")
   end
 
+  scenario "Users get validation errors for blank fields" do
+    visit "/"
+    click_button "Sign up"
+    expect(page).to have_current_path("/sign-up")
+    click_button "Sign up"
+    expect(find_by_id('form-username')).to have_content "can't be blank"
+    expect(find_by_id('form-password')).to have_content "can't be blank"
+  end
+  
   scenario "New users can fill in the sign up form" do
     visit "/"
     click_button "Sign up"

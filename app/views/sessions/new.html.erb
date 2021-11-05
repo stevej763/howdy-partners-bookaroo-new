@@ -2,14 +2,20 @@
   <%= button_to "Sign up", '/sign-up', class: "button-type-2", method: :get%>
 </div>
 
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-
-<h1>Log in</h1>
-   <%= form_tag '/log-in' do %>
-   <%= label_tag :username%>
-   <%= text_field_tag :username %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Log in"%>
-<%end%>
+<div class="credentials-container">
+  <h1>Log in</h1>
+    <%= form_tag '/log-in' do %>
+    <% if @error %>
+    <div class="error-message"><%= @error %></div>
+    <% end %>
+    <div class="form-section">
+      <div><%= label_tag :username%></div>
+      <%= text_field_tag :username %>
+    </div>
+    <div class="form-section">
+      <div><%= label_tag :password%></div>
+      <%= password_field_tag :password%>
+    </div>
+    <%= submit_tag "Log in", class: "button-type-3" %>
+  <%end%>
+</div>
