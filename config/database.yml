@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: bookaroo_production
-  username: pgapp
+  username: stevejones
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
