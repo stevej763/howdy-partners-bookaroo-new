@@ -15,6 +15,28 @@
     <h3><%= post.user.username %></h3>
     <p><%= post.message %></p>
     <p class="post-datetime"><%= post.created_at.strftime("%H:%M - %d %b %Y") %></p>
+    <div>
+    <% post.comments.each do |comment| %>
+      <div class="comment-container">
+        <div class="comment-user">
+          <h4><%= comment.user.username %></h4>
+        </div>
+        <div class="comment-message">
+          <p><%= comment.message %></p>
+          <p class="post-datetime"><%= comment.created_at.strftime("%H:%M - %d %b %Y") %></p>
+        </div>
+      </div>
+    <% end %>
+      <div class="new-comment-form">
+        <%= form_tag '/add-comment' do %>
+          <div class="form-section">
+            <%= text_area_tag :comment, params[:comment], id: "comment-post-id-#{post.id}", class: "new-comment-box"%>
+          </div>
+          <%= hidden_field_tag :post_id, post.id %>
+          <%= submit_tag "Add comment", id: "comment-button-id-#{post.id}", class: "new-comment-button"%>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>
 </div>

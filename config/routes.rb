@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   
   resources :posts
   get 'newsfeed', to: 'posts#newsfeed'
-  
+  post 'add-comment', to: 'posts#add_comment'
   root "sessions#welcome"
 end
