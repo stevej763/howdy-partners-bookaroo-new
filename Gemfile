@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#Travis Ci build tool
+gem 'travis' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
