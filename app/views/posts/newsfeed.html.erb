@@ -12,9 +12,9 @@
 <div class="posts">
 <% @posts.each_with_index do |post, index| %>
   <div class="post" id=<%=index%>>
-    <h3><%= post.user.username %></h3>
+    <h3><img class="profile-picture-on-newsfeed" src=<%= post.user.profile_picture %> />
+    <%= post.user.username %></h3>
     <p><%= post.message %></p>
-    <img src=<%= post.user.profile_picture %> />
     <p class="post-datetime"><%= post.created_at.strftime("%H:%M - %d %b %Y") %></p>
   </div>
 <% end %>
