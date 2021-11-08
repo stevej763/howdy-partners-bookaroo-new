@@ -10,6 +10,12 @@ class PostsController < ApplicationController
 
   def newsfeed
     @posts = Post.all.order(created_at: :desc)
+    # @comments = Comment.all
+  end
+
+  def add_comment
+    @comment = Comment.create(message: params[:comment], post_id: params[:post_id], user_id: current_user.id)
+    redirect_to newsfeed_url
   end
 
   private
