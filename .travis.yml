@@ -1,0 +1,26 @@
+language: ruby
+services:
+  - postgresql
+cache:
+  - bundler
+before_install:
+  - nvm install --lts
+  - gem install bundler
+before_script:
+  - bundle install --jobs=3 --retry=3
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake assets:precompile
+script:
+  - bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Bd0S79gchXvcDv7IPd+nh67BqPHHYO4uiVvOSxdffUavHIwdnZRUIaV3KgnxvHqWwyGBm8dY4AcsYBjCiGakqjhzJy4yRMRt2IM1LOtoXawu0WIYHNk1atgIGhxmLhLI7TsogFI7S7/QIofCGjovlFvdGLeHmfXAi3apvqXSM3j55QNNP1VjHXlQKVmX7cCrtJ7J8s5/8kFW5+vflvF0bYAmMPnm0/+MNAEiPMYhUx8OUZUuzA/PX7IU2WfM5fryyLwSIZErAo7jw3DxKCn87BoH2nnqEHkoRYSQWtE6ld3jjv8pp5F+Ni4MaARdl621uQfF4YJZj3j2oA5atIjP8dXWT1WTwG3Cb2HZiTHR7VW5XiP/U9Jt73lBsfcM4FnmWu9vnu8qyt6jqiKLep1ayTpRie1NRWGom8ULX/9uN6ssrJVJi5Y5w7CoGg/q+KOyfjVDogyGYfbRRMB7A9ynShw5QLvDiSStDkh/8RQ4Q3MzdeT6xMqC9c/mP0sUDqB4jlpRTVQneZaub/7FIK/Koxzgod4VrDAHIPCXfqO1xuxcQleLuMvrSI3nnoPS0qpBIVViKGq4qck0V3lqjEpPaNWuJmxwd1ua+pISosCncbXsA7NUZNrJX0xhBPSM5ZzoR/we9Ah+k7aCwrxdbbBTMHo65fEsfpi6ZEZw/zgxGxY=
+  app: howdy-test
+  on:
+    repo: stevej763/travis-test
+    branch: main
+  cleanup: "true"
+  run:
+    - "rake db:create"
+    - "rake db:migrate"
